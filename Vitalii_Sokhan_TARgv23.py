@@ -1,6 +1,13 @@
 ﻿from ctypes.wintypes import FLOAT
 
 
+
+
+
+
+
+
+
 print("Tere tulemast!".center(50))
 kool=input("Mis koolis sa õpid: ") #str kool
 kursus=int(input("\tMis kursusel: ")) #int kursus
@@ -16,10 +23,10 @@ ar1=float(input("Arv 1: "))
 ar2=float(input("Arv 2: "))
 
 
-print("Summa {0} ja {1} = {2}".format(arv1,arv2,arv1+arv2)) #summa
-print("{0} - {1} = {2}".format(arv1,arv2,arv1-arv2)) #minus
-print("{0} * {1} = {2}".format(arv1,arv2,arv1*arv2)) #umnozhenie
-print("{0} / {1} = {2}".format(arv1,arv2,arv1/arv2)) #delenie
-print("{0} astmes {1} = {2}".format(arv1,arv2,arv1**arv2)) #stepen
-print("{0} ja {1} jaak= {2}".format(arv1,arv2,arv1%arv2)) #procent
-print("{0} ja {1} jagamise tais osa = {2}".format(arv1,arv2,arv1//arv2)) #
+print("Summa {0} ja {1} = {2}".format(ar1,ar2,ar1+ar2)) #summa
+print("{0} - {1} = {2}".format(ar1,ar2,ar1-ar2)) #minus
+print("{0} * {1} = {2}".format(ar1,ar2,ar1*ar2)) #umnozhenie
+print("{0} / {1} = {2}".format(ar1,ar2,ar1/ar2)) #delenie
+print("{0} astmes {1} = {2}".format(ar1,ar2,ar1**ar2)) #stepen
+print("{0} ja {1} jaak= {2}".format(ar1,ar2,ar1%ar2)) #procent
+print("{0} ja {1} jagamise tais osa = {2}".format(ar1,ar2,ar1//ar2)) #
