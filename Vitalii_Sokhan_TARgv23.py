@@ -3,6 +3,7 @@ from ctypes.wintypes import FLOAT
 from math import *
 from tkinter import ROUND
 from xml.etree.ElementTree import PI # mat biblioteka
+from random import *
 
 
 
@@ -88,3 +89,42 @@ from xml.etree.ElementTree import PI # mat biblioteka
 
 #7
 
+#a=int(input("A= "))
+#b=int(input("B= "))
+#c=int(input("C= "))
+#d=int(input("D= "))
+#i=int(input("I= "))
+#S=(a+b+c+d+i) / 5
+#print("Sredneje arifm ",S)
+
+
+#a1=randint(1,10)
+#a2=randint(1,10)
+#a3=randint(1,10)
+#a4=randint(1,10)
+#a5=randint(1,10)
+#print("Arvude {0},{1},{2},{3} ja {4} aritmeetiline keskmine on {5}".format(a1,a2,a3,a4,a5(a1+a2+a3+a4+a5)/5))
+
+#8
+
+
+#print("    @..@")
+#print("   (----)")
+#print("  ( \__/ )")
+#print("  ^^ '' ^^") 
+
+#9
+
+#a=int(input("a= "))
+#b=int(input("b= "))
+#c=int(input("c= "))
+#P=a+b+c
+#print("P=a+b+c=",a,"+",b,"+",c,"=",P)
+
+#10
+
+#a=float(12.90) #cena
+#b=float(0.1) #10%
+#c=a*b
+#S=round((a+c)/2,2)
+#print("Kazhdyi drug dolzhen zaplatit ",S)
