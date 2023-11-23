@@ -1,6 +1,9 @@
-﻿from base64 import b16decode
+﻿from base64 import b16decode, b16encode
+from binascii import b2a_base64, b2a_hex, b2a_hqx, b2a_qp
 from ctypes.wintypes import FLOAT
 from math import *
+from ssl import VERIFY_X509_PARTIAL_CHAIN
+from stringprep import b1_set
 from tkinter import ROUND
 from xml.etree.ElementTree import PI # mat biblioteka
 from random import *
@@ -141,3 +144,35 @@ from random import *
 #else:
 #    print("Anmed ei ole õiged")
 
+
+#kalkulator
+try:
+    a=float(input("pervoe chislo:"))
+    try:
+        b=float(input("vtoroe chislo:"))
+        t=input("Tehe:")
+        if t in ['+','-','/','*','**','%','//']: #''=""
+            if t=='+':
+                v=a+b
+            elif t=='-':
+                v=a-b
+            elif t=='*':
+                v=a*b
+            elif t=='/':
+                if b==0:
+                   v='DIV/0'
+                else:
+                    v=a/b
+            elif t=='**':
+                v=a**b
+            elif t=='%':
+                v=a%b
+            else:
+                v=a//b
+            print("{0}{1}{2}={3}".format(a,t,b,v))
+        else:
+             print("Tandmute mark")
+    except :
+          print("Vale b")
+except :
+    print("Vale a")
