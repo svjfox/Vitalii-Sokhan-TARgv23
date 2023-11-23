@@ -1,11 +1,7 @@
-﻿from base64 import b16decode, b16encode
-from binascii import b2a_base64, b2a_hex, b2a_hqx, b2a_qp
-from ctypes.wintypes import FLOAT
+﻿
+
 from math import *
-from ssl import VERIFY_X509_PARTIAL_CHAIN
-from stringprep import b1_set
-from tkinter import ROUND
-from xml.etree.ElementTree import PI # mat biblioteka
+
 from random import *
 
 
@@ -145,34 +141,87 @@ from random import *
 #    print("Anmed ei ole õiged")
 
 
-#kalkulator
-try:
-    a=float(input("pervoe chislo:"))
-    try:
-        b=float(input("vtoroe chislo:"))
-        t=input("Tehe:")
-        if t in ['+','-','/','*','**','%','//']: #''=""
-            if t=='+':
-                v=a+b
-            elif t=='-':
-                v=a-b
-            elif t=='*':
-                v=a*b
-            elif t=='/':
-                if b==0:
-                   v='DIV/0'
-                else:
-                    v=a/b
-            elif t=='**':
-                v=a**b
-            elif t=='%':
-                v=a%b
-            else:
-                v=a//b
-            print("{0}{1}{2}={3}".format(a,t,b,v))
-        else:
-             print("Tandmute mark")
-    except :
-          print("Vale b")
-except :
-    print("Vale a")
+##kalkulator
+#try:
+#    a=float(input("pervoe chislo:"))
+#    try:
+#        b=float(input("vtoroe chislo:"))
+#        t=input("Tehe:")
+#        if t in ['+','-','/','*','**','%','//']: #''=""
+#            if t=='+':
+#                v=a+b
+#            elif t=='-':
+#                v=a-b
+#            elif t=='*':
+#                v=a*b
+#            elif t=='/':
+#                if b==0:
+#                   v='DIV/0'
+#                else:
+#                    v=a/b
+#            elif t=='**':
+#                v=a**b
+#            elif t=='%':
+#                v=a%b
+#            else:
+#                v=a//b
+#            print("{0}{1}{2}={3}".format(a,t,b,v))
+#        else:
+#            print("Tandmute mark")
+#    except :
+#          print("Vale b")
+#except :
+#      print("Vale a")
+
+
+
+
+
+#premija
+#grupp=input("nazvanie grupy: ")
+#if grupp=='TARgv23':
+#    pudumised=int(input("Skolko u tebja progulov: "))
+#    if pudumised<15:
+#        hinne=float(input("Skolko u tebja balov: "))
+#        if hinne>3.8:
+#            print("Nachisljaetsa")
+#        else:
+#            print("U tebja nizkij bal!")
+#    else:
+#        print("ne nachislaetsa")
+#else:
+#    print("ne nachisljaetsa")
+
+
+#grupp=input("nazvanie grupy: ")
+#pudumised=int(input("Skolko u tebja progulov: "))
+#hinne=float(input("Skolko u tebja balov: "))
+#if grupp=='TARgv23' and pudumised<15 and hinne>3.8:
+#    print("nachisljaetsa")
+#else:
+#    print("Ne nachisljaetsa")
+
+
+##Составить алгоритм вычисления гипотенузы прямоугольного треугольника, если известны его катеты.
+#a=float(input("Storona A: "))
+#b=float(input("Storona B: "))
+#c=sqrt(a**2+b*2)
+#print("C = ",c)
+
+
+#Составить алгоритм решения задачи для определения большей скорости: одно значение указано в километрах в час, а другое в метрах в секунду (1 м/с = 3,6 км/ч).
+
+
+
+#buterbrod
+
+soov=input("Buterbrod:").lower()
+if soov=="jah" or soov=="yes" or soov=="да":
+    valik=int(input("1-chtoto\n2-chtoto tam"))
+    if valik in [1,2]:
+        print("takogo est")
+    else:
+        print("Takogo net")
+else:
+    print("Chto to napisano")
+
