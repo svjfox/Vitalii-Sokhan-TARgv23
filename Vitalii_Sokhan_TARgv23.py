@@ -211,17 +211,32 @@ from random import *
 
 #Составить алгоритм решения задачи для определения большей скорости: одно значение указано в километрах в час, а другое в метрах в секунду (1 м/с = 3,6 км/ч).
 
+#a=float(input("Skoroct v m/s: "))
+#b=a*3.6
+#print(round("Skorost b = ",b,"km/ch"))
+#b=float(input("Skorost v km/ch: "))
+#a=b/3.6
+#print(round("Skorost a = ",a,"m/s"))
+
+
 
 
 #buterbrod
 
-soov=input("Buterbrod:").lower()
-if soov=="jah" or soov=="yes" or soov=="да":
-    valik=int(input("1-chtoto\n2-chtoto tam"))
-    if valik in [1,2]:
-        print("takogo est")
-    else:
-        print("Takogo net")
+#soov=input("Buterbrod:").lower()
+#if soov=="jah" or soov=="yes" or soov=="да":
+#    valik=int(input("1-chtoto\n2-chtoto tam"))
+#    if valik in [1,2]:
+#        print("takogo est")
+#    else:
+#        print("Takogo net")
+#else:
+#    print("Chto to napisano")
+
+#Если имя Juku, то пойдем с Juku в кино.
+name=input("Kak tvoe imja: ")
+if name=="Juku":
+    print("Poshli v kino ",name)
 else:
-    print("Chto to napisano")
+    print("My ne pojdem v kino")
 
