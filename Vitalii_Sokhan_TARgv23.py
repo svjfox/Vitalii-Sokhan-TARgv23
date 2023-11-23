@@ -128,3 +128,16 @@ from random import *
 #c=a*b
 #S=round((a+c)/2,2)
 #print("Kazhdyi drug dolzhen zaplatit ",S)
+
+
+#a=float(input("alfa:"))
+#b=float(input("betta:"))
+#c=float(input("gamma:"))
+#if a>0 and b>0 and c>0:
+#    if a+b+c==180:
+#        print("Kolmurk")
+#    else:
+#        print("Nurgad")
+#else:
+#    print("Anmed ei ole õiged")
+
