@@ -233,10 +233,5 @@ from random import *
 #else:
 #    print("Chto to napisano")
 
-#Если имя Juku, то пойдем с Juku в кино.
-name=input("Kak tvoe imja: ")
-if name=="Juku":
-    print("Poshli v kino ",name)
-else:
-    print("My ne pojdem v kino")
+
 
