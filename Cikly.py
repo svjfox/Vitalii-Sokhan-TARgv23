@@ -136,11 +136,12 @@ from random import*
 
 # # 7.    Вывести на экран числа, кратные К из промежутка [А,В].
 
-#K=input("K = ")
-#A=input("A = ")
-#B=input("B = ")
-#for x in range(A,B+1,1):
-#    print(x)
+K=(float(input("K = "))
+A=(float(input("A = "))
+B=(float(input("B = "))
+while x=B
+    print(x)
+
 
 
 
