@@ -1,6 +1,13 @@
 from re import A
+from tkinter import N
+from tkinter.tix import InputOnly
+from winreg import QueryInfoKey
 from xml.etree.ElementTree import PI
-from math import pi
+from math import sqrt
+from random import*
+
+
+
 
 
 # for x in range(10):
@@ -91,13 +98,26 @@ from math import pi
 
 # # 4.    Составьте программу, выводящую на экран квадраты чисел от 10 до 20.
 
-
+#x=10
+#while x<=20:
+#    print(x)
+#    x+=1
+#    i=round(sqrt(x),2)
+#    print(i)
+    
 
 
 
 # # 5.    Составьте программу, которая вычисляет сумму только отрицательных из N чисел. Значение N вводится с клавиатуры.
 
+#'!!!!!!!!!!!!!!!!!!!!!!!!!!!'
 
+#x=0
+#for x in range (10):
+#    #n=input("N = ")
+#    #if n<0:
+#        x+=1
+#        print(x)
 
 
 
@@ -114,7 +134,12 @@ from math import pi
 
 
 # # 7.    Вывести на экран числа, кратные К из промежутка [А,В].
- 
+
+#K=input("K = ")
+#A=input("A = ")
+#B=input("B = ")
+#for x in range(A,B+1,1):
+#    print(x)
 
 
 
@@ -122,19 +147,33 @@ from math import pi
 # # 8.    Составьте программу, которая печатает таблицу перевода расстояний из дюймов в сантиметры (1 дюйм =
 # # 2,5 см) для значений длин от 1 до 20 дюймов.
 
-
+#x=float(1)
+#for x in range(1,21):
+#        print(x)
 
 
 
 # # 9.    В банк на трехпроцентный вклад положили S евро. Какой станет сумма вклада через N лет?
 
+#S=float(input("Summa evro = "))
+#N=int(input("Kolichestvo let = "))
+#for x in range(N):
 
 
 
 
 # # 10. Ввести с клавиатуры 10 пар чисел.  Сравнить числа в каждой паре и напечатать большие из них.
 
+#for x in range(10):
+#    A=float(input("A = "))
+#    B=float(input("B = "))
 
+#    if A>B:
+#        print(f"Bolshee chislo: {A}")
+#    elif A<B:
+#        print(f"Bolshee chislo: {B}")
+#    else:
+#        print("Chisla ravny")
 
 
 
@@ -149,6 +188,18 @@ from math import pi
 # # Первая сенокосилка работала m часов, а каждая следующая на 10 минут больше, чем предыдущая.
 
 # # Сколько часов проработала вся бригада?
+
+
+#N=randint(2,10)
+#m=randint(1,10)
+#print("Masinad: ",N)
+#print("Tunid: ",m)
+#summa=m
+#for t in range(N-1):
+#     m=(m/6)*7
+#     summa+=m
+#     print(m)
+#print("Kokku masinad tõõtasid:",summa,"tn")
 
 
 
@@ -289,7 +340,6 @@ from math import pi
 #        else:
 #            print("0", end=" ")
 #    print()
-
 
 
 
