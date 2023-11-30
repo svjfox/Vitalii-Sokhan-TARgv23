@@ -1,11 +1,3 @@
-from ipaddress import summarize_address_range
-from re import A
-from tkinter import N, Y
-from tkinter.tix import InputOnly
-from winreg import QueryInfoKey
-from xml.etree.ElementTree import PI
-from math import sqrt
-from random import*
 
 
 
@@ -62,27 +54,28 @@ from random import*
 
 
 ## 1. Вводят 15 чисел. Определить, сколько среди них целых.
-# t=0
-# for x in range(15):
-#     a=float(input("Sisesta a: "))
-#     if a.is_integer(): # 2.0 == True; 2.45 == False
-#         t+=1
-# print(t)
+#
+ #t=0
+ #for x in range(15):
+ #    a=float(input("Sisesta a: "))
+ #    if a.is_integer(): # 2.0 == True; 2.45 == False
+ #        t+=1
+ #print(t)
 
-    # if a%1==0:
-    #     print("Целое")
-    # else:
-    #     print("Не целое")
+
+ #     if a%1==0:
+ #        print("Целое")
+ #    else:
+ #        print("Не целое")
 
 
 # 2. Запросите у пользователя число А и найдите сумму всех натуральных чисел от 1 до А.
+summa=0
+a=int(input("Sisesta a: "))
 
-# summa=0
-# a=int(input("Sisesta a: "))
-
-# for x in range (1,a+1,1):
-#     summa+=x
-# print('Summa: {0}'.format(summa))
+for x in range (1,a+1,1):
+    summa+=x
+print('Summa: {0}'.format(summa))
 
 
 # # 3.    Вводят 8 чисел. Найти их произведение (только положительных).
@@ -139,8 +132,7 @@ from random import*
 K=(float(input("K = "))
 A=(float(input("A = "))
 B=(float(input("B = "))
-while x=B
-    print(x)
+for x in 
 
 
 
