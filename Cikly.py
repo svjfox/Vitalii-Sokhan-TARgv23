@@ -1,5 +1,6 @@
+from ipaddress import summarize_address_range
 from re import A
-from tkinter import N
+from tkinter import N, Y
 from tkinter.tix import InputOnly
 from winreg import QueryInfoKey
 from xml.etree.ElementTree import PI
@@ -147,9 +148,16 @@ from random import*
 # # 8.    Составьте программу, которая печатает таблицу перевода расстояний из дюймов в сантиметры (1 дюйм =
 # # 2,5 см) для значений длин от 1 до 20 дюймов.
 
-#x=float(1)
-#for x in range(1,21):
-#        print(x)
+
+#x=1
+#y=2.5
+#Z=x*y
+#for x in range (20):
+#    x+=1
+#    Z=x*y
+#    print(Z)
+
+
 
 
 
@@ -157,7 +165,12 @@ from random import*
 
 #S=float(input("Summa evro = "))
 #N=int(input("Kolichestvo let = "))
+#p=0.03
 #for x in range(N):
+#    proc=S*p
+#    print("Za pervyj proc po vkladu =",proc)
+#    S+=proc
+#print("Za period summa depozita budet ravna - ",S)
 
 
 
