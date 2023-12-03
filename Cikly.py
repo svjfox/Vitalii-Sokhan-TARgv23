@@ -63,19 +63,16 @@
  #print(t)
 
 
- #     if a%1==0:
- #        print("Целое")
- #    else:
- #        print("Не целое")
+
 
 
 # 2. Запросите у пользователя число А и найдите сумму всех натуральных чисел от 1 до А.
-summa=0
-a=int(input("Sisesta a: "))
 
-for x in range (1,a+1,1):
-    summa+=x
-print('Summa: {0}'.format(summa))
+# summa=0
+# a=int(input("Sisesta a: "))
+# for x in range (1,a+1,1):
+#     summa+=x
+# print('Summa: {0}'.format(summa))
 
 
 # # 3.    Вводят 8 чисел. Найти их произведение (только положительных).
@@ -129,10 +126,10 @@ print('Summa: {0}'.format(summa))
 
 # # 7.    Вывести на экран числа, кратные К из промежутка [А,В].
 
-K=(float(input("K = "))
-A=(float(input("A = "))
-B=(float(input("B = "))
-for x in 
+# K=(float(input("K = "))
+# A=(float(input("A = "))
+# B=(float(input("B = "))
+# for x in 
 
 
 
