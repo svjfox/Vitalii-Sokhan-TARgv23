@@ -137,23 +137,23 @@ from math import *
 
 # # 7.    Вывести на экран числа, кратные К из промежутка [А,В].
 
-K=(float(input("K = "))
-A=(float(input("A = "))
-B=(float(input("B = "))
-for x in raund
-
-
-
+# K=int(input("K = "))
+# a=int(input("A = "))
+# b=int(input("B = "))
+# for x in range(a,b+1):
+#     if x%K==0:
+#         print(x,end=" ")
+    
 
 
 # # 8.    Составьте программу, которая печатает таблицу перевода расстояний из дюймов в сантиметры (1 дюйм =
 # # 2,5 см) для значений длин от 1 до 20 дюймов.
 
 
-#x=1
-#y=2.5
-#Z=x*y
-#for x in range (20):
+# x=1
+# y=2.5
+# Z=x*y
+# for x in range (20):
 #    x+=1
 #    Z=x*y
 #    print(Z)
@@ -164,14 +164,13 @@ for x in raund
 
 # # 9.    В банк на трехпроцентный вклад положили S евро. Какой станет сумма вклада через N лет?
 
-#S=float(input("Summa evro = "))
-#N=int(input("Kolichestvo let = "))
-#p=0.03
-#for x in range(N):
-#    proc=S*p
-#    print("Za pervyj proc po vkladu =",proc)
-#    S+=proc
-#print("Za period summa depozita budet ravna - ",S)
+S=float(input("Summa evro = "))
+N=int(input("Kolichestvo let = "))
+p=0.03
+for x in range(N):
+   Proc_za_1_god=S*p
+   S+=Proc_za_1_god
+print("Za period summa depozita budet ravna - ",round(S,2))
 
 
 
