@@ -100,12 +100,12 @@ from math import *
 # # 5.    Составьте программу, которая вычисляет сумму только отрицательных из N чисел. Значение N вводится с клавиатуры.
 
 
-summ=0
-while True:
-   n=float(input("N = "))
-   if n<0:
-       summ+=n
-   print(summ)
+# summ=0
+# while True:
+#    n=float(input("N = "))
+#    if n<0:
+#        summ+=n
+#    print(summ)
 
 
 
@@ -117,18 +117,30 @@ while True:
 
 # # Значение N вводится с клавиатуры.
 
-
-
+# summ1=0
+# summ2=0
+# summ3=0
+# while True:
+#    n=float(input("N = "))
+#    if n<0:
+#        summ1+=1
+#        print('Количество N<0 =',summ1)
+#    elif n>0:
+#        summ2+=1
+#        print('Количество N>0 =',summ2)
+#    elif n==0:
+#         summ3+=1
+#         print('Количество N=0 =',summ3)
 
 
 
 
 # # 7.    Вывести на экран числа, кратные К из промежутка [А,В].
 
-# K=(float(input("K = "))
-# A=(float(input("A = "))
-# B=(float(input("B = "))
-# for x in 
+K=(float(input("K = "))
+A=(float(input("A = "))
+B=(float(input("B = "))
+for x in raund
 
 
 
