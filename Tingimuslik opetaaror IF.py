@@ -248,6 +248,8 @@
 
 L=int(input('Сколько людей нужно перевести? - '))
 mest=int(input('Сколько мест в автобусе? - '))
-avtobusov=L//mest+1
-ludej_v_posl_avtobuse=L-avtobusov*mest
+avtobusov=L//mest
+ludej_v_posl_avtobuse=L%mest
+if ludej_v_posl_avtobuse>0:
+    avtobusov+=1
 print(f'Нужно {avtobusov}, в последнем автобусе {ludej_v_posl_avtobuse}.')
