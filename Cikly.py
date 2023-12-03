@@ -1,5 +1,7 @@
 
 from math import *
+from random import *
+
 
 
 
@@ -192,8 +194,13 @@ from math import *
 
 # # 11.Найти произведение двузначных нечетных чисел, кратных случайно сгенерированному числу.
 
-
-
+# random = randint(1,9)
+# print("Random number: ", random)
+# for x in range(11, 100, 2):
+#     if x%random==0:
+#         x*=x
+#         print(x, end=" ")
+       
 
 
 # # 12.В бригаде, работающей на уборке сена, имеется N сенокосилок.
