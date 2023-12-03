@@ -164,20 +164,20 @@ from math import *
 
 # # 9.    В банк на трехпроцентный вклад положили S евро. Какой станет сумма вклада через N лет?
 
-S=float(input("Summa evro = "))
-N=int(input("Kolichestvo let = "))
-p=0.03
-for x in range(N):
-   Proc_za_1_god=S*p
-   S+=Proc_za_1_god
-print("Za period summa depozita budet ravna - ",round(S,2))
+# S=float(input("Summa evro = "))
+# N=int(input("Kolichestvo let = "))
+# p=0.03
+# for x in range(N):
+#    Proc_za_1_god=S*p
+#    S+=Proc_za_1_god
+# print("Za period summa depozita budet ravna - ",round(S,2))
 
 
 
 
 # # 10. Ввести с клавиатуры 10 пар чисел.  Сравнить числа в каждой паре и напечатать большие из них.
 
-#for x in range(10):
+# for x in range(10):
 #    A=float(input("A = "))
 #    B=float(input("B = "))
 
