@@ -158,8 +158,7 @@ from random import *
 # for x in range (20):
 #    x+=1
 #    Z=x*y
-#    print(Z)
-
+#    print(f'{x} дюйм. = {Z} см.')
 
 
 
