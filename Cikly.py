@@ -277,11 +277,13 @@ from random import *
 # # 0 0 0 0 0 0 0 8 0
 # # 0 0 0 0 0 0 0 0 9
 
-#x=1
-#for x in range(9):
-#    for x in range (9):
-#        print ("0" ,end=" ")
-#    print ()
+# for i in range(9):
+#    for x in range(1,10):
+#        if x==i+1:
+#            print(x,end=" ")
+#        else:
+#            print("0", end=" ")
+#    print()
 
 
 
