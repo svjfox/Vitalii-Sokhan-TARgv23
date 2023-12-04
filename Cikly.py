@@ -398,9 +398,9 @@ from random import *
 # # x 0 0 0 0 0 0 x 0
 # # x 0 0 0 0 0 0 0 x
 
-#for i in range(9):
+# for i in range(9):
 #    for x in range(9):
-#        if x==0 or i==1:
+#        if x==0 or x==(i-1)+1:
 #            print("x",end=" ")
 #        else:
 #            print("0", end=" ")
