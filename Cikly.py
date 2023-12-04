@@ -360,6 +360,13 @@ from random import *
 
  
 # # 22.    Найти сумму чисел от 100 до 200, кратных 17.
+
+# summa=0
+# for x in range (100,201):
+#     if x%17==0:
+#         print(x, end=(" "))
+#         summa+=x
+# print(f"\nСумма чисел от 100 до 200, кратных 17 = {summa}")
  
 
 
