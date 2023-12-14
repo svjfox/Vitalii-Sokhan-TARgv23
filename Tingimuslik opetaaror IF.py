@@ -246,10 +246,10 @@
 # (при условии, что все предыдущие полностью заполнены)? Напишите программу, которая запрашивает количество людей и 
 # размер автобусов, а затем решает эту задачу.
 
-L=int(input('Сколько людей нужно перевести? - '))
-mest=int(input('Сколько мест в автобусе? - '))
-avtobusov=L//mest
-ludej_v_posl_avtobuse=L%mest
-if ludej_v_posl_avtobuse>0:
-    avtobusov+=1
-print(f'Нужно {avtobusov}, в последнем автобусе {ludej_v_posl_avtobuse}.')
+#L=int(input('Сколько людей нужно перевести? - '))
+#mest=int(input('Сколько мест в автобусе? - '))
+#avtobusov=L//mest
+#ludej_v_posl_avtobuse=L%mest
+#if ludej_v_posl_avtobuse>0:
+#    avtobusov+=1
+#print(f'Нужно {avtobusov}, в последнем автобусе {ludej_v_posl_avtobuse}.')
