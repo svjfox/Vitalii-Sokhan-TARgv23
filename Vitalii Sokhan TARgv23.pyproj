@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2a12c66a-2ed9-425b-8729-ac52b572c8c3</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Tingimuslik opetaaror IF.py</StartupFile>
+    <StartupFile>List.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
