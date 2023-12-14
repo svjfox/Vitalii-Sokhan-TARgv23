@@ -1,3 +1,6 @@
+from random import*
+
+
 # Практическая самостоятельная работа «Списки».
 
 # Задания:
@@ -67,29 +70,41 @@
 # Задание 2: Перемена мест
 # Напишите программу, которая меняет местами первый и последний элементы. (второй и предпоследний и т.д.). Количество меняемых местами элементов надо спросить у пользователя. В исходном списке минимум 2 элемента.
 
-kokku=randint(2,20)
-num_list=[]
-for i in range(kokku):
-    num_list.append(randint(-100,100))
-print(num_list)
-print()
-while True:
-    try:
-        kogus=int(input("Mitu positsiooni vahetada?"))
-        if kogus<=kokku/2:
-            break
-    except:
-        print("Proovi uuesti")
+#simvol=randint(2,20)
+#num_list=[]
+#for i in range(simvol):
+#    num_list.append(randint(-100,100))
+#print(num_list)
+#print()
+#while True:
+#    try:
+#        kogus=int(input("Mitu positsiooni vahetada?"))
+#        if kogus<=(len(num_list)/2):
+#            break
+#    except:
+#        print("Proovi uuesti")
 
-if kogus%2==0:
-    pass
-else:
-    pass
+
+#for i in range (0,kogus,1):
+#    X_tmp = num_list[i]
+#    print(str(i)," ",str(num_list[i])," ",str(num_list[(len(num_list)-i)-1]),"\n")
+#    print(X_tmp, "\n")
+
+
+#    num_list[i] = num_list[(len(num_list)-i)-1]
+#    num_list[(len(num_list)-i)-1] = X_tmp
+#print("\n", num_list)
 
 # Задание 3: Бесполезные числа
 # Николай задумался о поиске «бесполезного» числа на основании списка.
 # Суть оного в следующем: он берет произвольный список чисел, находит самое большое из них, а затем делит его на длину списка и заменяет его в списке результатом деления.
 # Студент пока не придумал, где может пригодиться подобное значение, но ищет у вас помощи в реализации такой функции.
+
+
+
+
+
+
 
 # Задание 4: Сортировка
 # Требуется создать программу, которая сортирует список чисел по убыванию/возрастанию их абсолютного значения.

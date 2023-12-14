@@ -21,8 +21,19 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="123.py" />
+    <Compile Include="Cikly.py" />
+    <Compile Include="List.py" />
+    <Compile Include="Matematika.py" />
+    <Compile Include="Sirakus.py" />
     <Compile Include="Tingimuslik opetaaror IF.py" />
     <Compile Include="Vitalii_Sokhan_TARgv23.py" />
+    <Compile Include="Zadanie1.py" />
+    <Compile Include="Zadanie2.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
