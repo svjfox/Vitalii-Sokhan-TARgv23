@@ -1,4 +1,6 @@
 from random import*
+from secrets import randbelow
+from tkinter import ROUND
 
 
 # Практическая самостоятельная работа «Списки».
@@ -100,6 +102,19 @@ from random import*
 # Суть оного в следующем: он берет произвольный список чисел, находит самое большое из них, а затем делит его на длину списка и заменяет его в списке результатом деления.
 # Студент пока не придумал, где может пригодиться подобное значение, но ищет у вас помощи в реализации такой функции.
 
+kokku=randint(2,20)
+print("kokku jarjedis on:",kokku,"elementi")
+num_list=[]
+for i in range(kokku):
+    num_list.append(round(random()+1000,2))
+print(num_list)
+max_=max(num_list)
+n=num_list.index(max_)
+print("\t",max_,"positsioonil:",n+1)
+num_list.pop(n)
+max_=max_/len(num_list)
+num_list.insert(n,max_)
+print(num_list)
 
 
 
