@@ -51,8 +51,40 @@
 
 # И если почтовый индеск Нарви, Талиннны и Кохтла-Ярве, сообщить пользователю «Оставайтесь дома!», в качестве решения «Носите маски!».
 
+#indexid=["Таллинн","Нарва, Нарва-Йыэсуу","Кохтла-Ярве","Ида-Вирумаа, Ляэне-Вирумаа, Йыгевамаа","город Тарту","Тартуммаа, Пылвамаа, Выруммаа, Валгаммаа","Вильяндимаа, Ярвамаа, Харьюмаа, Рапламаа","Пярнумаа","Ляэнемаа, Хийумаа, Сааремаа"]
+#while True:
+#    try:
+#        index=int(input("Vvedite pochtovyj index "))
+#        if len(str(index))==5: #"12345"
+#            break
+#    except:
+#        print("Oshibka")
+#print("Indexi analüüs")
+#index_list=list(str(index))
+#s1=int(index_list[0]) #1->0 Tallin indexiga 0
+#print("index {0} on {1} piirkonnas".format(index,indexid[s1-1]))
+
 # Задание 2: Перемена мест
 # Напишите программу, которая меняет местами первый и последний элементы. (второй и предпоследний и т.д.). Количество меняемых местами элементов надо спросить у пользователя. В исходном списке минимум 2 элемента.
+
+kokku=randint(2,20)
+num_list=[]
+for i in range(kokku):
+    num_list.append(randint(-100,100))
+print(num_list)
+print()
+while True:
+    try:
+        kogus=int(input("Mitu positsiooni vahetada?"))
+        if kogus<=kokku/2:
+            break
+    except:
+        print("Proovi uuesti")
+
+if kogus%2==0:
+    pass
+else:
+    pass
 
 # Задание 3: Бесполезные числа
 # Николай задумался о поиске «бесполезного» числа на основании списка.
