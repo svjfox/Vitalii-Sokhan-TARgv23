@@ -1,3 +1,10 @@
+import random
+
+
+
+
+
+
 # Игра «Камень-ножницы-бумага».
 
 # Игра
@@ -27,3 +34,48 @@
 # mylist = ["яблоко", "банан", "вишня"]
 # Random.shuffle(мой список)
 # распечатать(мой список)
+
+
+
+p1 = input("Имя первого игрока: ")
+p2 = input("Имя второго игрока (или 'робот' для робота): ")
+scores = {p1: 0, p2: 0}
+num_rounds = 3
+
+
+for round_num in range(1, num_rounds + 1):
+    print(f"\nРаунд {round_num}:")
+    
+    move1 = input(f"{p1}, введите ваш выбор (камень, ножницы или бумага): ").lower()
+    
+    if p2.lower() == 'робот':
+        move2 = random.choice(["камень", "ножницы", "бумага"])
+        print(f"Робот выбрал: {move2}")
+    else:
+        move2 = input(f"{p2}, введите ваш выбор (камень, ножницы или бумага): ").lower()
+    # move2 = random(["камень", "ножницы", "бумага"]) if (p2 == "робот") else input(f"{p2}, введите ваш выбор (камень, ножницы или бумага): ").lower()
+    
+    if move1 == move2:
+        print("Ничья!")
+    else:
+        
+        winner = p1 if (move1 == "камень" and move2 == "ножницы") or \
+                            (move1 == "ножницы" and move2 == "бумага") or \
+                            (move1 == "бумага" and move2 == "камень") else p2
+        print(f"{winner} побеждает в этом раунде!")
+        
+        scores[winner] += 1
+    
+    
+    print(f"\nТекущий счет: {p1}: {scores[p1]}, {p2}: {scores[p2]}")
+
+
+if scores[p1] > scores[p2]:
+    print(f"\n{p1} выигрывает матч!")
+elif scores[p1] < scores[p2]:
+    print(f"\n{p2} выигрывает матч!")
+else:
+    print("\nНичья!")
+
+# move2 = random.choice(["камень", "ножницы", "бумага"])
+# print(move2)
