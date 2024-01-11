@@ -28,8 +28,6 @@ def Lisamine(i:list,p:list,k:int):
 #3-Самую большую зарплату и кто ее получает,
 
 
-from imp import NullImporter
-from locale import ABMON_10
 
 
 def SuurimPalk(i:list,p:list):
