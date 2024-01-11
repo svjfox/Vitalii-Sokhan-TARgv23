@@ -37,9 +37,6 @@ def Kustutamine(i:list,p:list):
 
 
 
-
-
-
 #3-Самую большую зарплату и кто ее получает,
 
 
@@ -60,9 +57,6 @@ def SuurimPalk(i:list,p:list):
     return max_, nimi_list
 
 
-
-
-
 #4-Кто получает самую маленькую зарплату и какую именно,
 
 
@@ -80,7 +74,6 @@ def MinPalk(i:list,p:list):
             nimi_list.append(nimi)
 
     return min_, nimi_list
-
 
 
 #5-Упорядочить зарплаты в порядке возрастания и убывания вместе с именами,
