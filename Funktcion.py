@@ -1,6 +1,6 @@
 
 
-def Lisamine(i:int,p:list,k:int):
+def Lisamine(i:list,p:list,k:int):
     """Andmete lisamine listadesse
     Tagastab listud
 
@@ -8,7 +8,7 @@ def Lisamine(i:int,p:list,k:int):
     :param list p: Palkage loetelu
     :param int k: Inimeste kogus
     :rtype: list, list
-        """
+    """
     for i in range(k):
         nimi=input("Mis on inimese nimi")
         palk=int(input("Kui suur palk tal on? "))
