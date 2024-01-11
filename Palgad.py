@@ -29,16 +29,24 @@ inimesed=["A","B","C","D","E"]
 #3-Самую большую зарплату и кто ее получает,
 
 while True:
-    print("Lisamine-1\nSuurimPalk-3")
+    print("Lisamine-1\-2\nSuurimPalk-3\nSort-5")
     v=int(input())
     if v==1:
         k=int(input("Mitu inimest lisame? "))
         inimesed,palgad=Lisamine(inimesed, palgad,k)
         for i in range(len(palgad)):
             print(inimesed[i], "saab katte",palgad[i])
+    elif v==2:
+        pass
     elif v==3:
         maxpalk, nimi=SuurimPalk(inimesed,palgad)
         print(nimi,"saab katte",maxpalk,"Eur")
+    elif v==5:
+        i=int(input("Kasvad-0,Kahaned-1"))
+        inimesed,palgad=Sort(inimesed,palgad,i)
+        for i in range(len(palgad)):
+            print(palgad[i],"on",inimesed[i],"-l")
+
 
 
 

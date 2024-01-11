@@ -1,5 +1,8 @@
 
 
+from itertools import count
+
+
 def Lisamine(i:list,p:list,k:int):
     """Andmete lisamine listadesse
     Tagastab listud
@@ -18,7 +21,19 @@ def Lisamine(i:list,p:list,k:int):
 
 #2-Удалить человека и его зарплату(вводим имя),
 
-#def dellnime(i:list):
+def Kustutamine(i:list,p:list):
+    """
+    """
+    nimi=input("Nimi: ")
+    n=i.count(nimi)
+    
+    if n>0:
+        for x in i:
+            if x==nimi:
+                ind=i.index(x)
+                i.remove(x)
+                p.pop(ind)
+    return i,p
 
 
 
@@ -77,7 +92,7 @@ def Sort(i:list,p:list,a:int):
     N=len(i)
     if a==1:
         for n in range(0,N):
-            for m in range(n,N+1):
+            for m in range(n,N):
                 if p[n]<p[m]:
                     kaust=p[n]
                     p[n]=p[m]
@@ -87,7 +102,7 @@ def Sort(i:list,p:list,a:int):
                     i[m]=kaust
     else:
         for n in range(0,N):
-            for m in range(n,N+1):
+            for m in range(n,N):
                 if p[n]>p[m]:
                     kaust=p[n]
                     p[n]=p[m]
