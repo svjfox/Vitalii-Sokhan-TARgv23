@@ -71,6 +71,34 @@ def MinPalk(i:list,p:list):
 #5-Упорядочить зарплаты в порядке возрастания и убывания вместе с именами,
 
 
+def Sort(i:list,p:list,a:int):
+    """
+    """
+    N=len(i)
+    if a==1:
+        for n in range(0,N):
+            for m in range(n,N+1):
+                if p[n]<p[m]:
+                    kaust=p[n]
+                    p[n]=p[m]
+                    p[m]=kaust
+                    kaust=i[n]
+                    i[n]=i[m]
+                    i[m]=kaust
+    else:
+        for n in range(0,N):
+            for m in range(n,N+1):
+                if p[n]>p[m]:
+                    kaust=p[n]
+                    p[n]=p[m]
+                    p[m]=kaust
+                    kaust=i[n]
+                    i[n]=i[m]
+                    i[m]=kaust
+        pass
+    return i,p
+
+
 
 #6-Узнать, кто получает одинаковую зарплату, найти сколько таких людей вывести их данные на экран.
 
