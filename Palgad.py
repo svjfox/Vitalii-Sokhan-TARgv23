@@ -37,11 +37,13 @@ while True:
         for i in range(len(palgad)):
             print(inimesed[i], "saab katte",palgad[i])
     elif v==3:
-        maxpalk, nimi=SuurimPalk(inimesedm,)
+        maxpalk, nimi=SuurimPalk(inimesed,palgad)
+        print(nimi,"saab katte",maxpalk,"Eur")
 
 
 
 #4-Кто получает самую маленькую зарплату и какую именно,
+
 
 
 

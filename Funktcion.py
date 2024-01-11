@@ -29,7 +29,6 @@ def Lisamine(i:list,p:list,k:int):
 
 
 
-
 def SuurimPalk(i:list,p:list):
     """
     """
@@ -38,7 +37,6 @@ def SuurimPalk(i:list,p:list):
     a=0
     for palk in p:
         if palk==max_:
-
             ind=p.index(max_,a)
             nimi=i[ind]
             a+=1
@@ -51,6 +49,22 @@ def SuurimPalk(i:list,p:list):
 
 
 #4-Кто получает самую маленькую зарплату и какую именно,
+
+
+def MinPalk(i:list,p:list):
+    """
+    """
+    nimi_list=[]
+    min_=min(p)
+    a=0
+    for palk in p:
+        if palk==min_:
+            ind=p.index(min_,a)
+            nimi=i[ind]
+            a+=1
+            nimi_list.append(nimi)
+
+    return min_, nimi_list
 
 
 
