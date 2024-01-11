@@ -37,7 +37,7 @@ while True:
         for i in range(len(palgad)):
             print(inimesed[i], "saab katte",palgad[i])
     elif v==3:
-        maxpalk, nimi=SuurimPalk(inimesed,)
+        maxpalk, nimi=SuurimPalk(inimesedm,)
 
 
 
