@@ -7,14 +7,14 @@ inimesed=["A","B","C","D","E"]
 #1-Добавить еще несколько человек и зарплат(кол-во говорит пользователь),
 
 
-while True:
-    print("Lisamine-1")
-    v=int(input())
-    if v==1:
-        k=int(input("Mitu inimest lisame? "))
-        inimesed,palgad=Lisamine(inimesed, palgad,k)
-        for i in range(len(palgad)):
-            print(inimesed[i], "saab katte",palgad[i])
+#while True:
+#    print("Lisamine-1")
+#    v=int(input())
+#    if v==1:
+#        k=int(input("Mitu inimest lisame? "))
+#        inimesed,palgad=Lisamine(inimesed, palgad,k)
+#        for i in range(len(palgad)):
+#            print(inimesed[i], "saab katte",palgad[i])
 
 
 
@@ -28,7 +28,16 @@ while True:
 
 #3-Самую большую зарплату и кто ее получает,
 
-
+while True:
+    print("Lisamine-1\nSuurimPalk-3")
+    v=int(input())
+    if v==1:
+        k=int(input("Mitu inimest lisame? "))
+        inimesed,palgad=Lisamine(inimesed, palgad,k)
+        for i in range(len(palgad)):
+            print(inimesed[i], "saab katte",palgad[i])
+    elif v==3:
+        maxpalk, nimi=SuurimPalk(inimesed,)
 
 
 

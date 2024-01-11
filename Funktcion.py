@@ -17,7 +17,38 @@ def Lisamine(i:list,p:list,k:int):
     return i,p
 
 #2-Удалить человека и его зарплату(вводим имя),
+
+#def dellnime(i:list):
+
+
+
+
+
+
 #3-Самую большую зарплату и кто ее получает,
+
+
+from imp import NullImporter
+
+
+def SuurimPalk(i:list,p:list):
+    """
+    """
+    nimi_list=[]
+
+    max_=max(p)
+    kogus=p.count(max_)
+    for x in range(kogus):
+        ind=p.index(max_)
+        nimi=i[ind]
+        nimi_list.append(nimi)
+
+    return max_, nimi
+
+
+
+
+
 #4-Кто получает самую маленькую зарплату и какую именно,
 #5-Упорядочить зарплаты в порядке возрастания и убывания вместе с именами,
 #6-Узнать, кто получает одинаковую зарплату, найти сколько таких людей вывести их данные на экран.
