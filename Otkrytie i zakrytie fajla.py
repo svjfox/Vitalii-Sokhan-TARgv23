@@ -27,6 +27,8 @@ Kirjuta_failisse("Nimed.txt", list_)
 with open('Nimed.txt', 'r') as f:
     print(f.read())
     
+
+# удаление файла
 from os import *
 if path.isfile("Nimi.txt"): # проверка на существование файла
     remove("Nimed.txt")
