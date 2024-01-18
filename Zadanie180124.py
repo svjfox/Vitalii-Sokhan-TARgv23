@@ -40,9 +40,8 @@ est:list=loe_failist("est.txt")
 print(rus)
 print(est)
 
-#     перевода с эстонского языка на русский и с русского на эстонский.
-Vybor_jazyka='0'
-for i in range(1,11) or Vybor_jazyka=='3':
+
+for i in range(1,11 or 3):
     Vybor_jazyka=input("Выберите язык: 1-русский, 2-эстонский, 3-закрыть: ")
     if Vybor_jazyka=="1":
         print("Вы выбрали русский язык")
