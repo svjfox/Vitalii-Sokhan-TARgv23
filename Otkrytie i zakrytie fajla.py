@@ -1,6 +1,6 @@
 ﻿def Loe_failist(fail: str)-> list:
     jarjend=[]
-    f=open(fail, 'r', encoding="UTF-8-sig")
+    f=open(fail, 'r', encoding="UTF-8")
     for rida in f:
         jarjend.append(rida.strip()) # разделитель может быть любым в кавычках
     f.close()
@@ -10,7 +10,7 @@
 
 
 def Kirjuta_failisse(fail: str, jarjend: list):
-    f=open(fail, 'w', encoding="UTF-8-sig")
+    f=open(fail, 'w', encoding="UTF-8")
     for item in jarjend:
         f.write(item+"\n")
     f.close()
@@ -26,4 +26,8 @@ Kirjuta_failisse("Nimed.txt", list_)
 
 with open('Nimed.txt', 'r') as f:
     print(f.read())
+    
+from os import *
+if path.isfile("Nimi.txt"): # проверка на существование файла
+    remove("Nimed.txt")
     
