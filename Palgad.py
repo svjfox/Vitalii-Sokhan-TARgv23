@@ -26,12 +26,16 @@ while True:
         inimesed,palgad=Sort(inimesed,palgad,i)
         for i in range(len(palgad)):
             print(palgad[i],"on",inimesed[i],"-l")
-
+    elif v==6:
 
 
  #1-Добавить еще несколько человек и зарплат(кол-во говорит пользователь),
 
+
+
 #2-Удалить человека и его зарплату(вводим имя),
+
+
 
 #3-Самую большую зарплату и кто ее получает,
 

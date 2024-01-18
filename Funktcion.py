@@ -109,7 +109,19 @@ def Sort(i:list,p:list,a:int):
 
 
 #6-Узнать, кто получает одинаковую зарплату, найти сколько таких людей вывести их данные на экран.
-
+def zarplataravna(i:list,p:list):
+    """
+    """
+    nimi_list=[]
+    palk_list=[]
+    for n in range(len(p)):
+        if p[n] not in palk_list:
+            palk_list.append(p[n])
+            nimi_list.append(i[n])
+        else:
+            ind=palk_list.index(p[n])
+            nimi_list[ind]=nimi_list[ind]+", "+i[n]
+    return nimi_list,palk_list
 
 
 #7-Сделать поиск зарплаты по имени человека. Учесть, что имена могут повторяться,
