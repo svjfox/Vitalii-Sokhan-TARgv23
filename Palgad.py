@@ -1,35 +1,5 @@
 from Funktcion import *
-
-
-palgad=[1200,2500,750,395,1200]
-inimesed=["A","B","C","D","E"]
-
-
-
-while True:
-    print("Lisamine-1\nKustutamine-2\nSuurimPalk-3\nSort-5")
-    v=int(input())
-    if v==1:
-        k=int(input("Mitu inimest lisame? "))
-        inimesed,palgad=Lisamine(inimesed, palgad,k)
-        for i in range(len(palgad)):
-            print(inimesed[i], "saab katte",palgad[i])
-    elif v==2:
-        inimesed,palgad=Kustutamine(inimesed, palgad)
-        print(inimesed)
-        print(palgad)
-    elif v==3:
-        maxpalk, nimi=SuurimPalk(inimesed,palgad)
-        print(nimi,"saab katte",maxpalk,"Eur")
-    elif v==5:
-        i=int(input("Kasvad-0,Kahaned-1"))
-        inimesed,palgad=Sort(inimesed,palgad,i)
-        for i in range(len(palgad)):
-            print(palgad[i],"on",inimesed[i],"-l")
-    elif v==6:
-
-
- #1-Добавить еще несколько человек и зарплат(кол-во говорит пользователь),
+#1-Добавить еще несколько человек и зарплат(кол-во говорит пользователь),
 
 
 
@@ -73,3 +43,37 @@ while True:
 #18 -  Найти имена начинающиеся на введенную букву и их зарплаты. Отобразить данные в столбик (Имя-зарплата)
 
 #19-Придумай свою функцию
+
+palgad=[1200,2500,750,395,1200]
+inimesed=["A","B","C","D","E"]
+print(palgad)
+print(inimesed)
+
+while True:
+    print("Lisamine-1\nKustutamine-2\nSuurimPalk-3\nSort-5\nzarplataravna-6")
+    v=int(input())
+    if v==1:
+        k=int(input("Mitu inimest lisame? "))
+        inimesed,palgad=Lisamine(inimesed, palgad,k)
+        for i in range(len(palgad)):
+            print(inimesed[i], "saab katte",palgad[i])
+    elif v==2:
+        inimesed,palgad=Kustutamine(inimesed, palgad)
+        print(inimesed)
+        print(palgad)
+    elif v==3:
+        maxpalk, nimi=SuurimPalk(inimesed,palgad)
+        print(nimi,"saab katte",maxpalk,"Eur")
+    elif v==5:
+        i=int(input("Kasvad-0,Kahaned-1"))
+        inimesed,palgad=Sort(inimesed,palgad,i)
+        for i in range(len(palgad)):
+            print(palgad[i],"on",inimesed[i],"-l")
+    elif v==6:
+        inimesed,palgad=zarplataravna(inimesed,palgad)
+        for i in range(len(palgad)):
+            print(inimesed[i], "saab katte",palgad[i])
+    else:
+        print("Vale valik")
+print("Kas soovite veel midagi teha? (y/n)")
+        
