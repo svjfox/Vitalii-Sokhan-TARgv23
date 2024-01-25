@@ -81,6 +81,9 @@ for i in range(1,11 or 3):
                 print("Слово добавлено в словарь")
             else:
                 print("Слово не добавлено в словарь")
+    elif Vybor_jazyka=="3":
+        print("Вы закрыли программу")
+        break
 else:
     print("Вы закрыли программу")
 
