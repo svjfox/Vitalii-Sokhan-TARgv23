@@ -60,6 +60,7 @@ for i in range(1,11 or 3):
                 rus.append(slovo)
                 est.append(perevod)
                 print("Слово добавлено в словарь")
+                               
             else:
                 print("Слово не добавлено в словарь")
     elif Vybor_jazyka=="2":
