@@ -4,7 +4,25 @@ def FromEntryToLabel(event):
     t=ent.get()
     l.configure(text=t)
     
+def valik():
+    t=var.get()
+    ent.delete(0,END)
+    ent.insert(END,t)
 
+
+showflag=False
+def showtarnid(event):
+        global showflag
+        if showflag:
+            ent.configure(show='*')
+            showflag=False
+        else:
+            ent.configure(show='')
+            showflag=True 
+        
+   #на поыторный Enter можно сделать ent.configure(show='')
+   
+    
 
 aken=Tk()
 aken.geometry("600x500")
@@ -23,6 +41,9 @@ r2=Radiobutton(f,text='Teine',font='Arial 14',variable=var,value=2,command=valik
 r3=Radiobutton(f,text='Kolmas',font='Arial 14',variable=var,value=3,command=valik)
 
 btn.bind('<Button-1>',FromEntryToLabel) #LKM , -2 средняя, -3 правая
+ent.bind('<Return>',showtarnid) # Enter
+
+
 f.grid(row=0,column=0) #pack(), place()
 
 objects=[l,ent,btn,r1,r2,r3]
