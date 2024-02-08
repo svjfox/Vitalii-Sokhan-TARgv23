@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2a12c66a-2ed9-425b-8729-ac52b572c8c3</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>List.py</StartupFile>
+    <StartupFile>080224TKINTER.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,19 +21,38 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="080224TKINTER.py" />
     <Compile Include="123.py" />
+    <Compile Include="250124.py" />
     <Compile Include="Cikly.py" />
+    <Compile Include="funkcii.py" />
+    <Compile Include="Funktcion.py" />
     <Compile Include="List.py" />
     <Compile Include="Matematika.py" />
+    <Compile Include="MyModule.py" />
+    <Compile Include="Otkrytie i zakrytie fajla.py" />
+    <Compile Include="Palgad.py" />
     <Compile Include="Sirakus.py" />
     <Compile Include="Tingimuslik opetaaror IF.py" />
     <Compile Include="Vitalii_Sokhan_TARgv23.py" />
     <Compile Include="Zadanie1.py" />
+    <Compile Include="Zadanie180124.py" />
     <Compile Include="Zadanie2.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitattributes" />
     <Content Include=".gitignore" />
+    <Content Include="est.txt" />
+    <Content Include="Nimed.txt" />
+    <Content Include="potential.ico" />
+    <Content Include="riigid_pealinnad.txt" />
+    <Content Include="rus.txt" />
+    <Content Include="TextFile1.txt" />
+    <Content Include="__pycache__\Funktcion.cpython-39.pyc" />
+    <Content Include="__pycache__\MyModule.cpython-39.pyc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="__pycache__\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

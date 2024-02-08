@@ -5,6 +5,11 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Vitalii Sokhan TARgv23", "Vitalii Sokhan TARgv23.pyproj", "{2A12C66A-2ED9-425B-8729-AC52B572C8C3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{2A3ECABD-137A-4628-8CD6-725839E931B1}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Desktop\potential.ico = ..\..\..\..\Desktop\potential.ico
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
