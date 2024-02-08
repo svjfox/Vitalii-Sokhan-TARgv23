@@ -23,6 +23,7 @@
 
 from logging.handlers import WatchedFileHandler
 from multiprocessing.managers import ValueProxy
+from random import randint
 
 
 def loe_failist(f):
@@ -41,8 +42,8 @@ print(rus)
 print(est)
 
 
-for i in range(1,11 or 3):
-    Vybor_jazyka=input("Выберите язык: 1-русский, 2-эстонский, 3-закрыть: ")
+for i in range(1,11 or 4):
+    Vybor_jazyka=input("Выберите язык: 1-русский, 2-эстонский, 3-обучение, 4-закрыть: ")
     if Vybor_jazyka=="1":
         print("Вы выбрали русский язык")
         print("Введите слово на русском языке: ")
@@ -83,8 +84,23 @@ for i in range(1,11 or 3):
             else:
                 print("Слово не добавлено в словарь")
     elif Vybor_jazyka=="3":
+        print("Обучение, переведите 3 слова:")
+        #выбор рандомного слова из словаря
+        for i in range(1,4):
+                index=randint(0,len(rus)-1)
+                print("Введите перевод слова: ",rus[index])
+                perevod=input()
+                if perevod==est[index]:
+                    print("Верно")
+                else:
+                    print("Неверно")
+        
+   
+    elif Vybor_jazyka=="4":
         print("Вы закрыли программу")
         break
+    # сохраняем изменения в файлах
+
 else:
     print("Вы закрыли программу")
 
