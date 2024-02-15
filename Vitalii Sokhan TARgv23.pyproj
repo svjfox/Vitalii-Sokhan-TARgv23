@@ -23,7 +23,7 @@
   <ItemGroup>
     <Compile Include="080224TKINTER.py" />
     <Compile Include="123.py" />
-    <Compile Include="250124.py" />
+    <Compile Include="EVROPA250124.py" />
     <Compile Include="Cikly.py" />
     <Compile Include="funkcii.py" />
     <Compile Include="Funktcion.py" />
