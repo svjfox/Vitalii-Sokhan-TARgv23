@@ -56,3 +56,7 @@ while True:
             print('Изменен')
         else:
             print('Не изменен')
+
+                
+
+

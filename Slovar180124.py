@@ -100,7 +100,14 @@ for i in range(1,11 or 4):
         print("Вы закрыли программу")
         break
     # сохраняем изменения в файлах
-
+        fail=open("rus.txt",'w',encoding="utf-8-sig")
+        for i in rus:
+            fail.write(i+'\n')
+            fail.close()
+        fail=open("est.txt",'w',encoding="utf-8-sig")
+        for i in est:
+            fail.write(i+'\n')
+            fail.close()
 else:
     print("Вы закрыли программу")
 
