@@ -33,9 +33,9 @@ riigid=list(riik_pealinn.keys())
 print(riigid)
 
 while True:
-    riik=input('Riik: ')
+    riik=input('Страна: ')
     print(riik_pealinn[riik])
-    pealinn=input('Pealinn: ')
+    pealinn=input('Столица: ')
     print(pealinn_riik[pealinn])
     if riik not in riigid:
         print('Нет такой страны')

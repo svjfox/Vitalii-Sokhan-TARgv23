@@ -110,6 +110,7 @@ for i in range(1,11 or 4):
             fail.close()
 else:
     print("Вы закрыли программу")
+    
 
 
             
