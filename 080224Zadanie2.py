@@ -29,8 +29,7 @@ l=Label(text="Решение квадратного уравнения",bg='ligh
 btn=Button(text="Решить",fg='black',bg='green',font='Arial 15',width=20,relief=GROOVE)
 l2=Label(text="Решение",fg='black',bg='yellow',font='Arial 15',width=20,relief=GROOVE)
 
-
-
+# как 
 
 
 
