@@ -39,6 +39,18 @@ def execute_read_query(connection, query:str):
     except Error as e:
         print(f"Ошибка '{e}'")
         
+def execute_delete_query(connection, query:str):
+    """ Удаление таблицы или данных из таблицы
+    """
+    try:
+        cursor = connection.cursor()
+        cursor.execute(query)
+        connection.commit()
+        print("Таблица или данные из таблицы удалены")
+        
+    except Error as e:
+        print(f"Ошибка '{e}'")
+        
 #-------------SQL запросы----------------
 create_users_table="""
 CREATE TABLE IF NOT EXISTS users(
@@ -64,6 +76,9 @@ VALUES
 
 select_users='SELECT * FROM users'
 
+select_users='SELECT * FROM users'
+delete_data_from_users='DELETE FROM users where student=true'
+
 
 #-------------SQL запуск----------------
 
@@ -73,5 +88,11 @@ execute_query(conn,create_users_table)
 execute_query(conn,create_users)
 users=execute_read_query(conn,select_users)
 print('Студенты:')
+for user in users:
+    print(user)
+    
+execute_delete_query(conn,delete_data_from_users)
+users=execute_read_query(conn,select_users)
+print('Студенты удалены, остались=0:')
 for user in users:
     print(user)
