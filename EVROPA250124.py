@@ -21,7 +21,7 @@ def faillist_to_dict(f:str):
     riigid=[] #list riikidest
     file=open(f,'r', encoding="UTF-8-sig")
     for line in file:
-        k,v=line.strip().split('-') #k=voti, v=vaartus
+        k,v=line.strip().split('-')
         riik_pealin[k]=v
         pealinn_riik[v]=k
         riigid.append(k)
@@ -30,15 +30,21 @@ def faillist_to_dict(f:str):
     #kaivitame loodud funktsion
 riik_pealinn, pealinn_riik, riigid=faillist_to_dict('riigid_pealinnad.txt')
 riigid=list(riik_pealinn.keys())
-print(riigid)
+print(f'Страны и столицы: ',riik_pealinn)
 
 while True:
     riik=input('Страна: ')
-    print(riik_pealinn[riik])
-    pealinn=input('Столица: ')
-    print(pealinn_riik[pealinn])
-    if riik not in riigid:
+    if riik=='':
+        print(riik_pealinn[riik])
+    else:
         print('Нет такой страны')
+    pealinn=input('Столица: ')
+    if pealinn=='':        
+        print(pealinn_riik[pealinn])
+    else:
+        print('Нет такой столицы')
+    if riik not in riigid:
+        print(' ')
         lisada=input('Вы хотите добавить? (y/n)')
         if lisada=='y':
             riik_pealinn[riik]=pealinn
@@ -56,7 +62,33 @@ while True:
             print('Изменен')
         else:
             print('Не изменен')
+#     При желании пользователя проверить знание слов из словаря, реализуйте эту возможность  
+#                 случайным образом появляются названия столиц/стран,
+#                 после ввода соответствующего значения, сообщение о правильности или нет
+#                 после окончания проверки знаний результат в %)
+    kontroll=input('Хотите проверить знание? (y/n)')
+    if kontroll=='y':
+        oige=0
+        vale=0
+        for i in range(5):
+            riik=choice(riigid)
+            print(riik)
+            pealinn=input('Столица: ')
+            if pealinn==riik_pealinn[riik]:
+                print('Правильно')
+                oige+=1
+            else:
+                print('Неправильно')
+                vale+=1
+        print(f'Правильно: {oige} Неправильно: {vale}')
+        print(f'Процент правильных ответов: {oige/(oige+vale)*100}%')
+    else:
+        print('До свидания')
+        break           
 
+
+
+        
                 
 
 

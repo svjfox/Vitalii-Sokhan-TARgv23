@@ -30,15 +30,14 @@ Norra-Oslo
 Poola-Varssavi
 Portugal-Lissabon
 Prantsusmaa-Pariis
-Põhja-Makedoonia-Skopje
-Rumeenia-Bukarest
 Rootsi-Stockholm
+Rumeenia-Bukarest
 Saksamaa-Berliin
 San Marino-San Marino
 Serbia-Belgrad
 Slovakkia-Bratislava
 Sloveenia-Ljubljana
-Soome-Helsingi
+Soome-Helsinki
 Šotimaa-Edinburgh
 Šveits-Bern
 Taani-Kopenhaagen
