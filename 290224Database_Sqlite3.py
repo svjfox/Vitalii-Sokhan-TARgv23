@@ -78,6 +78,7 @@ select_users='SELECT * FROM users'
 
 select_users='SELECT * FROM users'
 delete_data_from_users='DELETE FROM users where student=true'
+delete_tabel_users='DROP TABLE users'
 
 
 #-------------SQL запуск----------------
@@ -96,3 +97,7 @@ users=execute_read_query(conn,select_users)
 print('Студенты удалены, остались=0:')
 for user in users:
     print(user)
+    
+execute_delete_query(conn,delete_tabel_users)
+
+    
