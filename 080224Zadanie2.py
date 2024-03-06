@@ -26,21 +26,34 @@ aken.title("Pealkiri")
 l = Label(text="Решение квадратного уравнения", bg='lightblue', fg='Green', font='Arial 24', height=2, width=30)
 l.pack()
 
-l2 = Label(text="Введите коэффициенты", fg='black', bg='yellow', font='Arial 15', width=20, relief=GROOVE)
-l2.pack()
+# Создаем фрейм для размещения полей ввода коэффициентов
+coeff_frame = Frame(aken, bg='yellow')
+coeff_frame.pack()
 
-ent = Entry(fg='black', bg='yellow', font='Arial 15', width=20, relief=GROOVE)
-ent.pack()
 
-ent2 = Entry(fg='black', bg='yellow', font='Arial 15', width=20, relief=GROOVE)
-ent2.pack()
 
-ent3 = Entry(fg='black', bg='yellow', font='Arial 15', width=20, relief=GROOVE)
-ent3.pack()
+ent = Entry(coeff_frame, fg='black', font='Arial 15', width=6, relief=GROOVE)
+ent.pack(side=LEFT, padx=5)
 
-btn = Button(text="Решить", fg='black', bg='green', font='Arial 15', width=20, relief=GROOVE)
+l1= Label(coeff_frame, text="Х**2+", fg='Green', font='Arial 15', width=5, relief=GROOVE)
+l1.pack(side=LEFT, padx=5)
 
-l2_res = Label(text="Решение", fg='black', bg='yellow', font='Arial 15', width=20, relief=GROOVE, height=5)
+ent2 = Entry(coeff_frame, fg='black', font='Arial 15', width=6, relief=GROOVE)
+ent2.pack(side=LEFT, padx=5)
+
+l2= Label(coeff_frame, text="Х+", fg='Green', font='Arial 15', width=5, relief=GROOVE)
+l2.pack(side=LEFT, padx=5)
+
+ent3 = Entry(coeff_frame, fg='black', font='Arial 15', width=6, relief=GROOVE)
+ent3.pack(side=LEFT, padx=5)
+
+l3= Label(coeff_frame, text="=0", fg='Green', font='Arial 15', width=5, relief=GROOVE)
+l3.pack(side=LEFT, padx=5)
+
+btn = Button(coeff_frame, text="Решить", fg='black', bg='green', font='Arial 15', width=10, relief=GROOVE)
+btn.pack(side=LEFT, padx=5)
+
+l2_res = Label(text="Решение", fg='black', bg='yellow', font='Arial 15', width=30, relief=GROOVE, height=5)
 l2_res.pack()
 
 
@@ -55,7 +68,7 @@ def solve(a, b, c):
         x1 = -b / (2 * a)
         return x1
     else:
-        return "No roots"
+        return "Не имеет корней"
 
 def on_click():
     a = ent.get()

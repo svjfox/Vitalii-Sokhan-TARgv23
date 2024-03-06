@@ -20,7 +20,6 @@ def execute_query(connection, query:str):
     """
     cursor = connection.cursor()
     try:
-        cursor=connection.cursor()
         cursor.execute(query)
         connection.commit()
         print("Данные добавлены")
