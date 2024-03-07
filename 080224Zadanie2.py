@@ -26,7 +26,7 @@ aken.title("Pealkiri")
 l = Label(text="Решение квадратного уравнения", bg='lightblue', fg='Green', font='Arial 24', height=2, width=30)
 l.pack()
 
-# Создаем фрейм для размещения полей ввода коэффициентов
+# фрейм
 coeff_frame = Frame(aken, bg='yellow')
 coeff_frame.pack()
 

@@ -96,7 +96,18 @@ users=execute_read_query(conn,select_users)
 print('Студенты удалены, остались=0:')
 for user in users:
     print(user)
+   
     
+# удаление таблицы
 execute_delete_query(conn,delete_tabel_users)
 
-    
+
+
+
+# # # # # # # # # # from os import *
+
+# # !!!!!!!!!!!!!!!!!!!!   вариант создания базы данных в самой папке расположения файла !!!!!!!!!!!!!!!!!
+# filename=path.abspath(__File__)
+# dbdir=filaename.rstrip('Database_Python.py')
+# dbpath=path.join(dbdir,'data.db')
+# conn=create_connection(dbpath)
