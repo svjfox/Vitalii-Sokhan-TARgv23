@@ -27,7 +27,7 @@
 # 1. Создайте базу данных с тремя связанными таблицами: «Продукты», «Категории» и «Бренды».
 
 from ast import While
-from multiprocessing import connection
+
 import select
 from sqlite3 import *
 from sqlite3 import Error
@@ -190,76 +190,181 @@ select_product_brand = """
 
 
 # 5. Реализовать возможность добавления в базу новых товаров, категорий и брендов.
-insert_brand = """
-INSERT INTO
-    brand (brand_id, brand_name)
-    VALUES
-    (4, 'brand4');
-    """
-    
-insert_category = """
-INSERT INTO
-    category (category_id, category_name)
-    VALUES
-    (4, 'category4');
-    """
 
-insert_product = """
-INSERT INTO
-    product (product_id, product_name, price, category_id, brand_id)
+
+
+def insert_brand(conn):
+    brand_id = input("Введите id бренда: ")
+    brand_name = input("Введите название бренда: ")
+    insert_b = """
+    INSERT INTO
+        brand (brand_id, brand_name)
     VALUES
-    (16, 'product16', 1600, 4, 4);
+        (?, ?);
     """
+    cursor = conn.cursor()
+    try:
+        cursor.execute(insert_b, (brand_id, brand_name))
+        conn.commit()  
+        print("Бренд успешно добавлен")
+    except sqlite3.Error as e:  
+        print(f"Ошибка при добавлении бренда: {e}")
+
+
+def insert_category(conn):
+    category_id = input("Введите id категории: ")
+    category_name = input("Введите название категории: ")
+    insert_c = """
+    INSERT INTO
+        category (category_id, category_name)
+    VALUES
+        (?, ?);
+    """
+    cursor = conn.cursor()
+    try:
+        cursor.execute(insert_c, (category_id, category_name))
+        conn.commit()  
+        print("Категория успешно добавлена")
+    except sqlite3.Error as e:  
+        print(f"Ошибка при добавлении категории: {e}")    
+
+
+def insert_product(conn):
+    product_id = input("Введите id продукта: ")
+    product_name = input("Введите название продукта: ")
+    price = input("Введите цену продукта: ")
+    category_id = input("Введите id категории продукта: ")
+    brand_id = input("Введите id бренда продукта: ")
+    insert_p = """
+    INSERT INTO
+        product (product_id, product_name, price, category_id, brand_id)
+    VALUES
+        (?, ?, ?, ?, ?);
+    """
+    cursor = conn.cursor()
+    try:
+        cursor.execute(insert_p, (product_id, product_name, price, category_id, brand_id))
+        conn.commit()  
+        print("Продукт успешно добавлен")
+    except sqlite3.Error as e: 
+        print(f"Ошибка при добавлении продукта: {e}")
+
+
     
 # 6. Сделать возможным изменение информации о товарах, категориях и брендах. Придумайте свои критерии.
-update_brand = """
-UPDATE
-    brand
-    SET
-    brand_name = 'brand5'
-    WHERE
-    brand_id = 4;
-    """
-    
-update_category = """
-    UPDATE
-    category
-    SET
-    category_name = 'category5'
-    WHERE
-    category_id = 4;
-    """
 
-update_product = """
+def update_brand(conn):
+    brand_name = input("Введите новое название бренда: ")
+    brand_id = input("Введите id бренда: ")
+    update_b = """
     UPDATE
-    product
+        brand
     SET
-    product_name = 'product5'
+        brand_name = ?
     WHERE
-    product_id = 16;
+        brand_id = ?;
     """
+    cursor = conn.cursor()
+    try:
+        cursor.execute(update_b, (brand_name, brand_id))
+        conn.commit()  
+        print("Название бренда успешно обновлено")
+    except sqlite3.Error as e:  
+        print(f"Ошибка при обновлении бренда: {e}")
+
+
+def update_category(conn):
+    category_name = input("Введите новое название категории: ")
+    category_id = input("Введите id категории: ")
+    update_c = """
+    UPDATE
+        category
+    SET
+        category_name = ?
+    WHERE
+        category_id = ?;
+    """
+    cursor = conn.cursor()
+    try:
+        cursor.execute(update_c, (category_name, category_id))
+        conn.commit()  
+        print("Название категории успешно обновлено")
+    except sqlite3.Error as e:  
+        print(f"Ошибка при обновлении категории: {e}")
+    
+def update_product(conn):
+    product_name = input("Введите новое название продукта: ")
+    product_id = input("Введите id продукта: ")
+    update_p = """
+    UPDATE
+        product
+    SET
+        product_name = ?
+    WHERE
+        product_id = ?;
+    """
+    cursor = conn.cursor()
+    try:
+        cursor.execute(update_p, (product_name, product_id))
+        conn.commit()  
+        print("Название продукта успешно обновлено")
+    except sqlite3.Error as e: 
+        print(f"Ошибка при обновлении продукта: {e}")
+
+
     
 # 7. Применяйте запросы для удаления продуктов по определенным критериям (например, все продукты определенной категории или бренда).
-delete_brand = """
+
+
+def delete_brand(conn):
+    brand_id = input("Введите id бренда: ")
+    delete_b = """
     DELETE FROM
-    brand
+        brand
     WHERE
-    brand_id = 4;
+        brand_id = ?;
     """
+    cursor = conn.cursor()
+    try:
+        cursor.execute(delete_b, (brand_id,))
+        conn.commit()  
+        print("Бренд успешно удален")
+    except sqlite3.Error as e:  
+        print(f"Ошибка при удалении бренда: {e}")
+
+def delete_category(conn):
+    category_id = input("Введите id категории: ")
+    delete_c = """
+    DELETE FROM
+        category
+    WHERE
+        category_id = ?;
+    """
+    cursor = conn.cursor()
+    try:
+        cursor.execute(delete_c, (category_id,))
+        conn.commit()
+        print("Категория успешно удалена")
+    except sqlite3.Error as e:
+        print(f"Ошибка при удалении категории: {e}")
+
+def delete_product(conn):
+    product_id = input("Введите id продукта: ")
+    delete_p = """
+    DELETE FROM
+        product
+    WHERE
+        product_id = ?;
+    """
+    cursor = conn.cursor()
+    try:
+        cursor.execute(delete_p, (product_id,))
+        conn.commit()
+        print("Продукт успешно удален")
+    except sqlite3.Error as e:
+        print(f"Ошибка при удалении продукта: {e}")
     
-delete_category = """
-    DELETE FROM
-    category
-    WHERE
-    category_id = 4;
-    """
-    
-delete_product = """
-    DELETE FROM
-    product
-    WHERE
-    product_id = 16;
-    """
+
     
 # 8. Полностью удалите любую таблицу, а затем восстановите ее заново.
 delete_brand_table = """
@@ -345,21 +450,21 @@ for i in range(1,11):
         Vybor_tablicy=input("Выберите таблицу: 1-бренды, 2-категории, 3-продукты: ")
         if Vybor_tablicy=="1":
             print("Вы выбрали добавление бренда")
-            execute_query(conn,insert_brand)
+            insert_brand(conn)
             brand=execute_read_query(conn,select_br)
             print('Бренды:')
             for br in brand:
                 print(br)
         elif Vybor_tablicy=="2":
             print("Вы выбрали добавление категории")
-            execute_query(conn,insert_category)
+            insert_category(conn)
             category=execute_read_query(conn,select_cat)
             print('Категории:')
             for cat in category:
                 print(cat)
         elif Vybor_tablicy=="3":
             print("Вы выбрали добавление продукта")
-            execute_query(conn,insert_product)
+            insert_product(conn)
             products=execute_read_query(conn,select_prod)
             print('Продукты:')
             for prod in products:
@@ -369,21 +474,21 @@ for i in range(1,11):
         Vybor_tablicy=input("Выберите таблицу: 1-бренды, 2-категории, 3-продукты: ")
         if Vybor_tablicy=="1":
             print("Вы выбрали удаление бренда")
-            execute_query(conn,delete_brand)
+            delete_brand(conn)
             brand=execute_read_query(conn,select_br)
             print('Бренды:')
             for br in brand:
                 print(br)
         elif Vybor_tablicy=="2":
             print("Вы выбрали удаление категории")
-            execute_query(conn,delete_category)
+            delete_category(conn)
             category=execute_read_query(conn,select_cat)
             print('Категории:')
             for cat in category:
                 print(cat)
         elif Vybor_tablicy=="3":
             print("Вы выбрали удаление продукта")
-            execute_query(conn,delete_product)
+            delete_product(conn)
             products=execute_read_query(conn,select_prod)
             print('Продукты:')
             for prod in products:
@@ -393,21 +498,21 @@ for i in range(1,11):
         Vybor_tablicy=input("Выберите таблицу: 1-бренды, 2-категории, 3-продукты: ")
         if Vybor_tablicy=="1":
             print("Вы выбрали изменение бренда")
-            execute_query(conn,update_brand)
+            update_brand(conn)
             brand=execute_read_query(conn,select_br)
             print('Бренды:')
             for br in brand:
                 print(br)
         elif Vybor_tablicy=="2":
             print("Вы выбрали изменение категории")
-            execute_query(conn,update_category)
+            update_category(conn)
             category=execute_read_query(conn,select_cat)
             print('Категории:')
             for cat in category:
                 print(cat)
         elif Vybor_tablicy=="3":
             print("Вы выбрали изменение продукта")
-            execute_query(conn,update_product)
+            update_product(conn)
             products=execute_read_query(conn,select_prod)
             print('Продукты:')
             for prod in products:
