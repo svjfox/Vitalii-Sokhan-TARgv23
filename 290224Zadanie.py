@@ -443,112 +443,126 @@ for prod in products:
     
 # создаем диалоговое окно работы с базой данных
 
-for i in range(1,11):
-    Vybor_deistvija=input("Выберите действие: 1-добавить, 2-удалить, 3-изменить, 4-выбрать, 5-закрыть: ")
-    if Vybor_deistvija=="1":
-        print("Вы выбрали добавление")
-        Vybor_tablicy=input("Выберите таблицу: 1-бренды, 2-категории, 3-продукты: ")
-        if Vybor_tablicy=="1":
-            print("Вы выбрали добавление бренда")
-            insert_brand(conn)
-            brand=execute_read_query(conn,select_br)
-            print('Бренды:')
-            for br in brand:
-                print(br)
-        elif Vybor_tablicy=="2":
-            print("Вы выбрали добавление категории")
-            insert_category(conn)
-            category=execute_read_query(conn,select_cat)
-            print('Категории:')
-            for cat in category:
-                print(cat)
-        elif Vybor_tablicy=="3":
-            print("Вы выбрали добавление продукта")
-            insert_product(conn)
-            products=execute_read_query(conn,select_prod)
-            print('Продукты:')
-            for prod in products:
-                print(prod)
-    elif Vybor_deistvija=="2":
-        print("Вы выбрали удаление")
-        Vybor_tablicy=input("Выберите таблицу: 1-бренды, 2-категории, 3-продукты: ")
-        if Vybor_tablicy=="1":
-            print("Вы выбрали удаление бренда")
-            delete_brand(conn)
-            brand=execute_read_query(conn,select_br)
-            print('Бренды:')
-            for br in brand:
-                print(br)
-        elif Vybor_tablicy=="2":
-            print("Вы выбрали удаление категории")
-            delete_category(conn)
-            category=execute_read_query(conn,select_cat)
-            print('Категории:')
-            for cat in category:
-                print(cat)
-        elif Vybor_tablicy=="3":
-            print("Вы выбрали удаление продукта")
-            delete_product(conn)
-            products=execute_read_query(conn,select_prod)
-            print('Продукты:')
-            for prod in products:
-                print(prod)
-    elif Vybor_deistvija=="3":
-        print("Вы выбрали изменение")
-        Vybor_tablicy=input("Выберите таблицу: 1-бренды, 2-категории, 3-продукты: ")
-        if Vybor_tablicy=="1":
-            print("Вы выбрали изменение бренда")
-            update_brand(conn)
-            brand=execute_read_query(conn,select_br)
-            print('Бренды:')
-            for br in brand:
-                print(br)
-        elif Vybor_tablicy=="2":
-            print("Вы выбрали изменение категории")
-            update_category(conn)
-            category=execute_read_query(conn,select_cat)
-            print('Категории:')
-            for cat in category:
-                print(cat)
-        elif Vybor_tablicy=="3":
-            print("Вы выбрали изменение продукта")
-            update_product(conn)
-            products=execute_read_query(conn,select_prod)
-            print('Продукты:')
-            for prod in products:
-                print(prod)
-    elif Vybor_deistvija=="4":
-        print("Вы выбрали выбор")
-        Vybor_tablicy=input("Выберите таблицу: 1-бренды, 2-категории, 3-продукты: ")
-        if Vybor_tablicy=="1":
-            print("Вы выбрали бренды")
-            brand=execute_read_query(conn,select_br)
-            print('Бренды:')
-            for br in brand:
-                print(br)
-        elif Vybor_tablicy=="2":
-            print("Вы выбрали категории")
-            category=execute_read_query(conn,select_cat)
-            print('Категории:')
-            for cat in category:
-                print(cat)
-        elif Vybor_tablicy=="3":
-            print("Вы выбрали продукты")
-            products=execute_read_query(conn,select_prod)
-            print('Продукты:')
-            for prod in products:
-                print(prod)
-    elif Vybor_deistvija=="5":
-        print("Вы выбрали закрыть")
-        break
-else:
-    print("Неверный ввод")
+
+import tkinter as tk
+
+# Предположим, что у вас уже есть функции для выполнения запросов к базе данных
+
+def handle_show():
+    # Очищаем текстовое поле перед отображением новых данных
+    data_text.delete(1.0, tk.END)
     
+    if table_var.get() == "Бренды":
+        # Здесь должен быть код для отображения данных из таблицы "Бренды"
+        data_text.insert(tk.END, "Данные из таблицы 'Бренды':\n")
+        for row in execute_read_query(conn, select_br):
+            data_text.insert(tk.END, f"{row}\n")
+                
+    elif table_var.get() == "Категории":
+        # Здесь должен быть код для отображения данных из таблицы "Категории"
+        data_text.insert(tk.END, "Данные из таблицы 'Категории':\n")
+        for row in execute_read_query(conn, select_cat):
+            data_text.insert(tk.END, f"{row}\n")
+            
+    elif table_var.get() == "Продукты":
+        # Здесь должен быть код для отображения данных из таблицы "Продукты"
+        data_text.insert(tk.END, "Данные из таблицы 'Продукты':\n")
+        for row in execute_read_query(conn, select_prod):
+            data_text.insert(tk.END, f"{row}\n")
+            
+    pass
+
+
+
+def handle_add():
+    # Здесь должен быть код для добавления данных в выбранную таблицу
+    if table_var.get() == "Бренды":
+        brand_name = add_entry.get()
+        insert_brand(conn)
+        
+        # вызов функции для добавления бренда с использованием brand_name
+    elif table_var.get() == "Категории":
+        category_name = add_entry.get()
+        insert_category(conn)
+        
+        # вызов функции для добавления категории с использованием category_name
+    elif table_var.get() == "Продукты":
+        product_name = add_entry.get()
+        insert_product(conn)
+        # вызов функции для добавления продукта с использованием product_name
+    pass
+
+def handle_delete():
+    if table_var.get() == "Бренды":
+        delete_brand(conn)
+        # Здесь должен быть код для удаления данных из выбранной таблицы
     
+    elif table_var.get() == "Категории":
+        delete_category(conn)
+    # Здесь должен быть код для удаления данных из выбранной таблицы
+    
+    elif table_var.get() == "Продукты":
+        delete_product(conn)
+    
+    pass
+
+def handle_edit():
+    # Здесь должен быть код для редактирования данных в выбранной таблице
+    if table_var.get() == "Бренды":
+        update_brand(conn)
+        # вызов функции для изменения данных в таблице "Бренды"
+    elif table_var.get() == "Категории":
+        update_category(conn)
+        # вызов функции для изменения данных в таблице "Категории"
+    elif table_var.get() == "Продукты":
+        update_product(conn)
+        # вызов функции для изменения данных в таблице "Продукты"
+        
+    pass
 
 
+def handle_close():
+    root.destroy()
 
+root = tk.Tk()
+root.title("Менеджер товаров")
 
+# Фрейм для отображения данных
+data_frame = tk.Frame(root)
+data_frame.pack(pady=10)
 
+# Фрейм для радиокнопок выбора таблицы
+table_frame = tk.Frame(root)
+table_frame.pack(pady=5)
+
+# Фрейм для кнопок действий
+action_frame = tk.Frame(root)
+action_frame.pack(pady=5)
+
+# Отображение данных
+data_text = tk.Text(data_frame, height=10, width=50)
+data_text.pack()
+
+# Радиокнопки для выбора таблицы
+table_var = tk.StringVar(value="Бренды")
+tk.Radiobutton(table_frame, text="Бренды", variable=table_var, value="Бренды").pack(side=tk.LEFT)
+tk.Radiobutton(table_frame, text="Категории", variable=table_var, value="Категории").pack(side=tk.LEFT)
+tk.Radiobutton(table_frame, text="Продукты", variable=table_var, value="Продукты").pack(side=tk.LEFT)
+
+# Поле ввода для добавления данных
+add_label = tk.Label(action_frame, text="Введите данные:")
+add_label.pack(side=tk.LEFT, padx=5)
+add_entry = tk.Entry(action_frame)
+add_entry.pack(side=tk.LEFT, padx=5)
+
+# Кнопки действий
+tk.Button(action_frame, text="Показать", command=handle_show).pack(side=tk.LEFT, padx=5)
+tk.Button(action_frame, text="Добавить", command=handle_add).pack(side=tk.LEFT, padx=5)
+tk.Button(action_frame, text="Удалить", command=handle_delete).pack(side=tk.LEFT, padx=5)
+tk.Button(action_frame, text="Изменить", command=handle_edit).pack(side=tk.LEFT, padx=5)
+tk.Button(action_frame, text="Закрыть", command=handle_close).pack(side=tk.LEFT, padx=5)
+
+root.mainloop() 
+conn.close()
 
 
