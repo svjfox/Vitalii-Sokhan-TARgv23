@@ -31,6 +31,9 @@ from ast import While
 import select
 from sqlite3 import *
 from sqlite3 import Error
+import tkinter as tk
+from tkinter import messagebox
+from tkinter import simpledialog
 
 def create_connection(path:str):
     """ Создание подключения к базе данных SQLite
@@ -194,8 +197,8 @@ select_product_brand = """
 
 
 def insert_brand(conn):
-    brand_id = input("Введите id бренда: ")
-    brand_name = input("Введите название бренда: ")
+    brand_id = simpledialog.askstring("Введите id бренда:", "Введите id бренда:")
+    brand_name = simpledialog.askstring("Введите название бренда:", "Введите название бренда:")
     insert_b = """
     INSERT INTO
         brand (brand_id, brand_name)
@@ -212,8 +215,8 @@ def insert_brand(conn):
 
 
 def insert_category(conn):
-    category_id = input("Введите id категории: ")
-    category_name = input("Введите название категории: ")
+    category_id = simpledialog.askstring("Введите id категории: ", "Введите id категории: ")
+    category_name = simpledialog.askstring("Введите название категории: ", "Введите название категории: ")
     insert_c = """
     INSERT INTO
         category (category_id, category_name)
@@ -230,11 +233,11 @@ def insert_category(conn):
 
 
 def insert_product(conn):
-    product_id = input("Введите id продукта: ")
-    product_name = input("Введите название продукта: ")
-    price = input("Введите цену продукта: ")
-    category_id = input("Введите id категории продукта: ")
-    brand_id = input("Введите id бренда продукта: ")
+    product_id = simpledialog.askstring("Введите id продукта: ", "Введите id продукта: ")
+    product_name = simpledialog.askstring("Введите название продукта: ", "Введите название продукта: ")
+    price = simpledialog.askstring("Введите цену продукта: ", "Введите цену продукта: ")
+    category_id = simpledialog.askstring("Введите id категории продукта: ", "Введите id категории продукта: ")
+    brand_id = simpledialog.askstring("Введите id бренда продукта: ", "Введите id бренда продукта: ")
     insert_p = """
     INSERT INTO
         product (product_id, product_name, price, category_id, brand_id)
@@ -254,8 +257,8 @@ def insert_product(conn):
 # 6. Сделать возможным изменение информации о товарах, категориях и брендах. Придумайте свои критерии.
 
 def update_brand(conn):
-    brand_name = input("Введите новое название бренда: ")
-    brand_id = input("Введите id бренда: ")
+    brand_name = simpledialog.askstring("Введите новое название бренда: ", "Введите новое название бренда: ")
+    brand_id = simpledialog.askstring("Введите id бренда: ", "Введите новое название бренда: ")
     update_b = """
     UPDATE
         brand
@@ -274,8 +277,8 @@ def update_brand(conn):
 
 
 def update_category(conn):
-    category_name = input("Введите новое название категории: ")
-    category_id = input("Введите id категории: ")
+    category_name = simpledialog.askstring("Введите новое название категории: ", "Введите новое название категории: ")
+    category_id = simpledialog.askstring("Введите id категории: ", "Введите новое название категории: ")
     update_c = """
     UPDATE
         category
@@ -293,8 +296,8 @@ def update_category(conn):
         print(f"Ошибка при обновлении категории: {e}")
     
 def update_product(conn):
-    product_name = input("Введите новое название продукта: ")
-    product_id = input("Введите id продукта: ")
+    product_name = simpledialog.askstring("Введите новое название продукта: ", "Введите новое название продукта: ")
+    product_id = simpledialog.askstring("Введите id продукта: ", "Введите id продукта: ")
     update_p = """
     UPDATE
         product
@@ -317,7 +320,7 @@ def update_product(conn):
 
 
 def delete_brand(conn):
-    brand_id = input("Введите id бренда: ")
+    brand_id = simpledialog.askstring("Введите id бренда: ", "Введите id бренда: ")
     delete_b = """
     DELETE FROM
         brand
@@ -333,7 +336,7 @@ def delete_brand(conn):
         print(f"Ошибка при удалении бренда: {e}")
 
 def delete_category(conn):
-    category_id = input("Введите id категории: ")
+    category_id = simpledialog.askstring("Введите id категории: ", "Введите id категории: ")
     delete_c = """
     DELETE FROM
         category
@@ -349,7 +352,7 @@ def delete_category(conn):
         print(f"Ошибка при удалении категории: {e}")
 
 def delete_product(conn):
-    product_id = input("Введите id продукта: ")
+    product_id = simpledialog.askstring("Введите id продукта: ", "Введите id продукта: ")
     delete_p = """
     DELETE FROM
         product
@@ -444,7 +447,131 @@ for prod in products:
 # создаем диалоговое окно работы с базой данных
 
 
-import tkinter as tk
+# import tkinter as tk
+
+# # Предположим, что у вас уже есть функции для выполнения запросов к базе данных
+
+# def handle_show():
+#     # Очищаем текстовое поле перед отображением новых данных
+#     data_text.delete(1.0, tk.END)
+    
+#     if table_var.get() == "Бренды":
+#         # Здесь должен быть код для отображения данных из таблицы "Бренды"
+#         data_text.insert(tk.END, "Данные из таблицы 'Бренды':\n")
+#         for row in execute_read_query(conn, select_br):
+#             data_text.insert(tk.END, f"{row}\n")
+                
+#     elif table_var.get() == "Категории":
+#         # Здесь должен быть код для отображения данных из таблицы "Категории"
+#         data_text.insert(tk.END, "Данные из таблицы 'Категории':\n")
+#         for row in execute_read_query(conn, select_cat):
+#             data_text.insert(tk.END, f"{row}\n")
+            
+#     elif table_var.get() == "Продукты":
+#         # Здесь должен быть код для отображения данных из таблицы "Продукты"
+#         data_text.insert(tk.END, "Данные из таблицы 'Продукты':\n")
+#         for row in execute_read_query(conn, select_prod):
+#             data_text.insert(tk.END, f"{row}\n")
+            
+#     pass
+
+
+
+# def handle_add():
+#     # Здесь должен быть код для добавления данных в выбранную таблицу
+#     if table_var.get() == "Бренды":
+#         brand_name = add_entry.get()
+#         insert_brand(conn)
+        
+#         # вызов функции для добавления бренда с использованием brand_name
+#     elif table_var.get() == "Категории":
+#         category_name = add_entry.get()
+#         insert_category(conn)
+        
+#         # вызов функции для добавления категории с использованием category_name
+#     elif table_var.get() == "Продукты":
+#         product_name = add_entry.get()
+#         insert_product(conn)
+#         # вызов функции для добавления продукта с использованием product_name
+#     pass
+
+# def handle_delete():
+#     if table_var.get() == "Бренды":
+#         delete_brand(conn)
+#         # Здесь должен быть код для удаления данных из выбранной таблицы
+    
+#     elif table_var.get() == "Категории":
+#         delete_category(conn)
+#     # Здесь должен быть код для удаления данных из выбранной таблицы
+    
+#     elif table_var.get() == "Продукты":
+#         delete_product(conn)
+    
+#     pass
+
+# def handle_edit():
+#     # Здесь должен быть код для редактирования данных в выбранной таблице
+#     if table_var.get() == "Бренды":
+#         update_brand(conn)
+#         # вызов функции для изменения данных в таблице "Бренды"
+#     elif table_var.get() == "Категории":
+#         update_category(conn)
+#         # вызов функции для изменения данных в таблице "Категории"
+#     elif table_var.get() == "Продукты":
+#         update_product(conn)
+#         # вызов функции для изменения данных в таблице "Продукты"
+        
+#     pass
+
+
+# def handle_close():
+#     root.destroy()
+
+# root = tk.Tk()
+# root.title("Менеджер товаров")
+
+# # Фрейм для отображения данных
+# data_frame = tk.Frame(root)
+# data_frame.pack(pady=10)
+
+# # Фрейм для радиокнопок выбора таблицы
+# table_frame = tk.Frame(root)
+# table_frame.pack(pady=5)
+
+# # Фрейм для кнопок действий
+# action_frame = tk.Frame(root)
+# action_frame.pack(pady=5)
+
+# # Отображение данных
+# data_text = tk.Text(data_frame, height=10, width=50)
+# data_text.pack()
+
+# # Радиокнопки для выбора таблицы
+# table_var = tk.StringVar(value="Бренды")
+# tk.Radiobutton(table_frame, text="Бренды", variable=table_var, value="Бренды").pack(side=tk.LEFT)
+# tk.Radiobutton(table_frame, text="Категории", variable=table_var, value="Категории").pack(side=tk.LEFT)
+# tk.Radiobutton(table_frame, text="Продукты", variable=table_var, value="Продукты").pack(side=tk.LEFT)
+
+# # Поле ввода для добавления данных
+# add_label = tk.Label(action_frame, text="Введите данные:")
+# add_label.pack(side=tk.LEFT, padx=5)
+# add_entry = tk.Entry(action_frame)
+# add_entry.pack(side=tk.LEFT, padx=5)
+
+# # Кнопки действий
+# tk.Button(action_frame, text="Показать", command=handle_show).pack(side=tk.LEFT, padx=5)
+# tk.Button(action_frame, text="Добавить", command=handle_add).pack(side=tk.LEFT, padx=5)
+# tk.Button(action_frame, text="Удалить", command=handle_delete).pack(side=tk.LEFT, padx=5)
+# tk.Button(action_frame, text="Изменить", command=handle_edit).pack(side=tk.LEFT, padx=5)
+# tk.Button(action_frame, text="Закрыть", command=handle_close).pack(side=tk.LEFT, padx=5)
+
+# root.mainloop() 
+# conn.close()
+
+
+# import tkinter as tk
+# from tkinter import messagebox
+# from tkinter import simpledialog
 
 # Предположим, что у вас уже есть функции для выполнения запросов к базе данных
 
@@ -453,53 +580,52 @@ def handle_show():
     data_text.delete(1.0, tk.END)
     
     if table_var.get() == "Бренды":
-        # Здесь должен быть код для отображения данных из таблицы "Бренды"
+        
         data_text.insert(tk.END, "Данные из таблицы 'Бренды':\n")
         for row in execute_read_query(conn, select_br):
             data_text.insert(tk.END, f"{row}\n")
                 
     elif table_var.get() == "Категории":
-        # Здесь должен быть код для отображения данных из таблицы "Категории"
+       
         data_text.insert(tk.END, "Данные из таблицы 'Категории':\n")
         for row in execute_read_query(conn, select_cat):
             data_text.insert(tk.END, f"{row}\n")
             
     elif table_var.get() == "Продукты":
-        # Здесь должен быть код для отображения данных из таблицы "Продукты"
+        
         data_text.insert(tk.END, "Данные из таблицы 'Продукты':\n")
         for row in execute_read_query(conn, select_prod):
             data_text.insert(tk.END, f"{row}\n")
             
     pass
 
-
-
 def handle_add():
-    # Здесь должен быть код для добавления данных в выбранную таблицу
+    
     if table_var.get() == "Бренды":
         brand_name = add_entry.get()
         insert_brand(conn)
         
-        # вызов функции для добавления бренда с использованием brand_name
+        
+       
     elif table_var.get() == "Категории":
         category_name = add_entry.get()
         insert_category(conn)
         
-        # вызов функции для добавления категории с использованием category_name
+        
     elif table_var.get() == "Продукты":
         product_name = add_entry.get()
         insert_product(conn)
-        # вызов функции для добавления продукта с использованием product_name
+       
     pass
 
 def handle_delete():
     if table_var.get() == "Бренды":
         delete_brand(conn)
-        # Здесь должен быть код для удаления данных из выбранной таблицы
+        
     
     elif table_var.get() == "Категории":
         delete_category(conn)
-    # Здесь должен быть код для удаления данных из выбранной таблицы
+    
     
     elif table_var.get() == "Продукты":
         delete_product(conn)
@@ -507,16 +633,16 @@ def handle_delete():
     pass
 
 def handle_edit():
-    # Здесь должен быть код для редактирования данных в выбранной таблице
+    
     if table_var.get() == "Бренды":
         update_brand(conn)
-        # вызов функции для изменения данных в таблице "Бренды"
+        
     elif table_var.get() == "Категории":
         update_category(conn)
-        # вызов функции для изменения данных в таблице "Категории"
+        
     elif table_var.get() == "Продукты":
         update_product(conn)
-        # вызов функции для изменения данных в таблице "Продукты"
+        
         
     pass
 
@@ -524,26 +650,30 @@ def handle_edit():
 def handle_close():
     root.destroy()
 
+def handle_change():
+    new_value = simpledialog.askstring("Изменение", "Введите новое значение:")
+    
+
 root = tk.Tk()
 root.title("Менеджер товаров")
 
-# Фрейм для отображения данных
+# отображениe данных
 data_frame = tk.Frame(root)
 data_frame.pack(pady=10)
 
-# Фрейм для радиокнопок выбора таблицы
+# Показ
 table_frame = tk.Frame(root)
 table_frame.pack(pady=5)
 
-# Фрейм для кнопок действий
+# Кнопки
 action_frame = tk.Frame(root)
 action_frame.pack(pady=5)
 
-# Отображение данных
+# Данные
 data_text = tk.Text(data_frame, height=10, width=50)
 data_text.pack()
 
-# Радиокнопки для выбора таблицы
+# Радиокнопки
 table_var = tk.StringVar(value="Бренды")
 tk.Radiobutton(table_frame, text="Бренды", variable=table_var, value="Бренды").pack(side=tk.LEFT)
 tk.Radiobutton(table_frame, text="Категории", variable=table_var, value="Категории").pack(side=tk.LEFT)
@@ -555,7 +685,7 @@ add_label.pack(side=tk.LEFT, padx=5)
 add_entry = tk.Entry(action_frame)
 add_entry.pack(side=tk.LEFT, padx=5)
 
-# Кнопки действий
+# Кнопки
 tk.Button(action_frame, text="Показать", command=handle_show).pack(side=tk.LEFT, padx=5)
 tk.Button(action_frame, text="Добавить", command=handle_add).pack(side=tk.LEFT, padx=5)
 tk.Button(action_frame, text="Удалить", command=handle_delete).pack(side=tk.LEFT, padx=5)
@@ -563,6 +693,3 @@ tk.Button(action_frame, text="Изменить", command=handle_edit).pack(side=
 tk.Button(action_frame, text="Закрыть", command=handle_close).pack(side=tk.LEFT, padx=5)
 
 root.mainloop() 
-conn.close()
-
-
